@@ -1,0 +1,9 @@
+What film has the highest domestic gross?,The Dark Knight
+Who is the most successful director according to the list?,Peter Jackson
+Who is the most successful actor according to the list?,Elijah Wood
+What is the oldest movie on the list?,Seven Samurai
+What is the newest movie on the list?,Interstellar
+What is the most popular movie genre?,crime/drama
+What film has the lowest domestic gross?,12 Angry Men
+What series of films is the most successful according to the list?,Lord of the Rings
+What film has the highest domestic gross when adjusted for inflation?,Star Wars: Episode IV - A New Hope
