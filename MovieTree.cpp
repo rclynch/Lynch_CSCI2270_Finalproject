@@ -448,13 +448,14 @@ void MovieTree::buildVector(int ranking, string title, double releaseYear, strin
 	//cout<<tracker->mainActor<<endl;
 	//cout<<tracker->genre<<endl;
 	//cout<<temp->totalDomesticGross<<endl;
-	buildVector(temp);
+	//buildVector(temp);
+	mainVector.push_back(node); // combined void MovieTree::buildVector(MovieNode *node)
 }
 //buildVector pushes the temp node from previous buildVector function into the mainVector
-void MovieTree::buildVector(MovieNode *node)
+/*void MovieTree::buildVector(MovieNode *node)
 {
 	mainVector.push_back(node);
-}
+}*/
 //buildQVector takes in two strings from the file being read in by the main Driver, assigns them to a temp MovieNode pointer..
 //then pushes temp into the qVector.
 void MovieTree::buildQVector(string Q, string A)
