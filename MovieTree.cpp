@@ -449,7 +449,7 @@ void MovieTree::buildVector(int ranking, string title, double releaseYear, strin
 	//cout<<tracker->genre<<endl;
 	//cout<<temp->totalDomesticGross<<endl;
 	//buildVector(temp);
-	mainVector.push_back(node); // combined void MovieTree::buildVector(MovieNode *node)
+	mainVector.push_back(temp); // combined void MovieTree::buildVector(MovieNode *node)
 }
 //buildVector pushes the temp node from previous buildVector function into the mainVector
 /*void MovieTree::buildVector(MovieNode *node)
