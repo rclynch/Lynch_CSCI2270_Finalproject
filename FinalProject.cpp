@@ -20,6 +20,9 @@ int main(int argc, char* argv[])
 //int main()
 {
 	// cout<<"mainstart"<<endl;
+	bool messageCheck;//Used to check if message file open
+	bool cpiCheck;//Used to check if cpi file opens
+	bool questionCheck;//Used to check if question file opens
 	string object;
 	int ranking;
 	string title;
@@ -42,9 +45,11 @@ int main(int argc, char* argv[])
 	if(messageFile.fail())
 	{
 		cout <<"Failed to open file" <<endl;
+		messageCheck = false;
 	}
 	if(messageFile.is_open())
 	{
+		messageCheck = true;
 		while(!messageFile.eof())
 		{
 			getline(messageFile, object, ',');
@@ -83,9 +88,11 @@ int main(int argc, char* argv[])
 	if(cpiFile.fail())
 	{
 		cout <<"Failed to open file" <<endl;
+		cpiCheck = false;
 	}
 	if(cpiFile.is_open())
 	{
+		cpiCheck = true;
 		while(!cpiFile.eof())
 		{
 			getline(cpiFile, object, ',');
@@ -110,9 +117,11 @@ int main(int argc, char* argv[])
 	if(questionFile.fail())
 	{
 		cout <<"Failed to open file" <<endl;
+		questionCheck = false;
 	}
 	if(questionFile.is_open())
 	{
+		questionCheck = true;
 		while(!questionFile.eof())
 		{
 			getline(questionFile, object, ',');
@@ -132,7 +141,7 @@ int main(int argc, char* argv[])
 	bool check = true;
 	
 	//displaying menu and user interface:
-	while(check == true)
+	while(check == true && messageCheck == true)
 	{
 		int command;
 		cout << "======Main Menu====="<<endl<<"1.Print Top 25 Movies "<<endl<<"2.Print In Order of Highest Total Domestic Gross"<<endl;
@@ -152,8 +161,12 @@ int main(int argc, char* argv[])
 		}
 		else if(command ==3)//print in order of highest grossing adjusted for inflation
 		{
-			call.printByGrossInflated();
-			check = true;
+			if(cpiCheck == false){
+	                	cout<<"cpi file did not open. Unable to run command."<<endl;
+			}else{
+				call.printByGrossInflated();
+				check = true;
+			}
 		}
 		else if(command == 4)//print in alphebetical order of movieTitle
 		{
@@ -177,7 +190,11 @@ int main(int argc, char* argv[])
 		}
 		else if(command == 9)//play movie Trivia
 		{
-			call.movieTrivia();
+			if(questionCheck == false){
+                		cout<<"Question file did not open. Unable to run command."<<endl;
+			}else{
+				call.movieTrivia();
+			}
 		}
 		else if(command == 10)//quit
 		{
@@ -185,5 +202,9 @@ int main(int argc, char* argv[])
 			check = false;
 		}
 	}//end of while loop
+	if(messageCheck == false){
+	    cout<<"Message file did not open. Unable to run program."<<endl;
+	}
+	
 	return 0;
 }
