@@ -296,7 +296,7 @@ double MovieTree::searchCPI(MovieNode* node)
 	{
 		//cout<<cpiVector[i]->year<<endl;
 		//cout<<cpiVector[i]->cpi<<endl;
-		
+
 		if(node->year == cpiVector[i]->year)
 		{
 			cpiNum = cpiVector[i]->cpi;
@@ -384,7 +384,7 @@ void MovieTree::printByGenre()
 }
 //movieTrivia function calculated a random number between 1 & 9, then uses that value to print out the corresponding question..
 //in qVector at that index. The user is then prompted for a response to the question and compares the respons to qVector's corresponding..
-//index answer value. 
+//index answer value.
 void MovieTree::movieTrivia()
 {
 	int index = rand() % 10;
@@ -426,7 +426,7 @@ void MovieTree::movieTrivia()
 		cout<<"Answer: "<<qVector[index]->answer<<endl;
 	}
 }
-//addCpi function takes in two values of data type double from the file being read in by the main driver. 
+//addCpi function takes in two values of data type double from the file being read in by the main driver.
 //A temp pointer is then made and assigned the values of year and cpi, and pushes them into the cpiVector.
 void MovieTree::addCpi(double in_yr, double in_cpi)
 {
@@ -449,7 +449,7 @@ void MovieTree::buildVector(int ranking, string title, double releaseYear, strin
 	//cout<<tracker->genre<<endl;
 	//cout<<temp->totalDomesticGross<<endl;
 	//buildVector(temp);
-	mainVector.push_back(node); // combined void MovieTree::buildVector(MovieNode *node)
+	mainVector.push_back(temp); // combined void MovieTree::buildVector(MovieNode *node)
 }
 //buildVector pushes the temp node from previous buildVector function into the mainVector
 /*void MovieTree::buildVector(MovieNode *node)
